@@ -12,12 +12,9 @@ circuit = QuantumCircuit(2, 2)
 #circuit.x(0) [10]
 #->
 #circuit.x(0). circuit.x [11]
-circuit.barrier(0,1)
 ## (0,1) -> (1,0)
-circuit.x(0)
+circuit.h(0)
 circuit.cx(0,1)
-circuit.x(0)
-circuit.barrier(0,1)
 # Map the quantum measurement to the classical bits
 circuit.measure([0,1], [1,0])
 # compile the circuit down to low-level QASM instructions
